@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;800&family=Poppins:wght@300;500;600&display=swap');
+
+:root {
+    --theme-color: #000000;
+    --accent-color: #ffffff;
+    --deadline-color:#f5b521;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lora', serif;
+    overflow-x: hidden;
+}
+
+input {
+    border: none;
+    border: 1.7px solid black;
+    outline: none;
+    font-size: 14px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+textarea {
+    border: none;
+    border: 1.7px solid black;
+    outline: none;
+    font-size: 14px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 150px;
+    resize: none;
+}
+
+select {
+    border: none;
+    border: 1.7px solid black;
+    outline: none;
+    font-size: 14px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: white;
+}
+
+button {
+    border: none;
+    border: 1.7px solid black;
+    background-color: var(--theme-color);
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--accent-color);
+    padding: 10px 20px;
+    width: auto;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1024px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+.menu {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.menu .setting {
+    width: auto;
+}
+
+.menu .search {
+    width: 70%;
+}
+
+.menu .filter {
+    width: 30%;
+}
+
+.menu .add {
+    width: auto;
+}
+
+.homework {
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 40px;
+}
+
+.homework .task {
+    border: 1.7px solid;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    box-shadow: 4px 7px 0px var(--theme-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.homework .task.deadline {
+    box-shadow: 4px 7px 0px var(--deadline-color);
+}
+
+.homework .task .task_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.homework .task .task_header p {
+    font-size: 13px;
+    color: #63656e;
+}
+
+.homework .task .task_header .task_action a {
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.homework .task .task_main {
+    font-size: 16px;
+    padding: 1rem 0;
+}
+
+.homework .task .task_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #63656e;
+}
+
+.modal {
+    z-index: 100;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal .modal_content {
+    max-width: 400px;
+    width: 80%;
+    background-color: white;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    box-shadow: 4px 7px 0px black;
+}
+
+.modal .modal_content .modal_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.modal .modal_content .modal_header h4 {
+    font-size: 18px;
+}
+
+.modal .modal_content .modal_header span {
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal .modal_content .modal_form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.modal .modal_content .modal_form .input {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.modal .modal_content .modal_form .input label {
+    font-size: 14px;
+}
+
+.notif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 600px) {
+    .menu .add {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+        max-width: 1024px;
+        margin: auto;
+        padding: 1.5rem;
+    }
+
+    .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .menu .search {
+        width: 100%;
+    }
+    
+    .menu .setting {
+        width: auto;
+    }
+
+    .menu .setting,
+    .menu .filter {
+        order: 1;
+    }
+    
+    .menu .filter {
+        width: 70%;
+    }
+    
+    .menu .add button {
+        width: 100%;
+    }
+
+    .homework {
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 8rem;
+    }
+}

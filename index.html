@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="modal" data-target="theme_modal">
+        <div class="modal_content">
+            <div class="modal_header">
+                <h4>Setting</h4>
+                <span id="close_modal">&times;</span>
+            </div>
+            <form id="theme">
+                <div class="modal_form">
+                    <div class="input">
+                        <label>Theme Color</label>
+                        <input type="color" name="theme_color" required>
+                    </div>
+                    <div class="input">
+                        <label>Accent Color</label>
+                        <input type="color" name="theme_accent" required>
+                    </div>
+                    <div class="input">
+                        <label>Deadline Color</label>
+                        <input type="color" name="theme_deadline" required>
+                    </div>
+                    <div class="input">
+                        <button type="submit">Change</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" data-target="add_modal">
+        <div class="modal_content">
+            <div class="modal_header">
+                <h4>Create Homework</h4>
+                <span id="close_modal">&times;</span>
+            </div>
+            <form id="add">
+                <div class="modal_form">
+                    <div class="input">
+                        <label>Deadline</label>
+                        <input type="date" name="deadline" required>
+                    </div>
+                    <div class="input">
+                        <label>Tugas</label>
+                        <textarea name="task" required></textarea>
+                    </div>
+                    <div class="input">
+                        <button type="submit">Add Task</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" data-target="edit_modal">
+        <div class="modal_content">
+            <div class="modal_header">
+                <h4>Edit Homework</h4>
+                <span id="close_modal">&times;</span>
+            </div>
+            <form id="edit">
+                <div class="modal_form">
+                    <div class="input">
+                        <label>Deadline</label>
+                        <input type="date" name="deadline" required>
+                    </div>
+                    <div class="input">
+                        <label>Tugas</label>
+                        <textarea name="task" required></textarea>
+                    </div>
+                    <div class="input">
+                        <button type="submit">Update Task</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="menu">
+            <div class="setting">
+                <button id="modal_btn" data-modal="theme_modal">Theme</button>
+            </div>
+            <div class="search">
+                <input type="text" id="search" placeholder="Search Homework..">
+            </div>
+            <div class="filter">
+                <select id="filter">
+                    <option selected disabled>Filter</option>
+                    <option value="all">All</option>
+                    <option value="deadline">Deadline</option>
+                    <option value="late">Late</option>
+                </select>
+            </div>
+            <div class="add">
+                <button id="modal_btn" data-modal="add_modal">Add</button>
+            </div>
+        </div>
+        
+        <div class="homework"> </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+    
+</body>
+</html>

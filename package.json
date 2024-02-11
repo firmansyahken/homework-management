@@ -1,0 +1,16 @@
+{
+  "name": "homework-management",
+  "version": "1.0.0",
+  "description": "This is app like todolist but have any feature",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/firmansyahken/homework-management"
+  },
+  "keywords": [
+    "homework",
+    "management",
+    "javascript"
+  ],
+  "author": "Wahyudi Firmansyah",
+  "license": "ISC"
+}
